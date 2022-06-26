@@ -2,3 +2,32 @@
 
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import "nDefaults.scss";
+$grey: #d6d6d6;
+$purple:#e62fe6;
+$white:white;
+
+.bgGrey{
+    background-color: $grey;
+}
+.bgPurple{
+    background-color: $purple;
+}
+.colorWhite{
+    color: $white;
+}
+.mainContainer{
+    height: calc(100vh - (60px + 5em));
+}
+.contentContainer{
+    height: calc(100vh - (60px + 5em + 120px));
+    background-color: #ebebff;
+}
+.paddingB1em{
+ padding-bottom: 1em;
+}
+.width95{
+    width: 98%;
+}
+.width100{
+    width: 100%;
+}

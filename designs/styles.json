@@ -1,1 +1,12 @@
-{"classes":[]}
+{
+    "classes": [
+        "bgGrey",
+        "bgPurple",
+        "colorWhite",
+        "mainContainer",
+        "contentContainer",
+        "paddingB1em",
+        "width95",
+        "width100"
+    ]
+}

@@ -1,0 +1,55 @@
+[
+    {
+        "id": "sd_9WQaiL2zq1lD1oCT",
+        "type": "tab",
+        "createdDate": "2022-06-26T17:03:56.778Z",
+        "label": "controlForms",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "controlFormsComponent"
+    },
+    {
+        "id": "sd_4aX4sRMLYZIi1Dp1",
+        "type": "OnInit",
+        "z": "sd_9WQaiL2zq1lD1oCT",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_4aX4sRMLYZIi1Dp1",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_qU5xSPz4Ptl7lRNJ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "controlFormsComponent"
+    },
+    {
+        "id": "sd_qU5xSPz4Ptl7lRNJ",
+        "type": "PageVariables",
+        "z": "sd_9WQaiL2zq1lD1oCT",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_qU5xSPz4Ptl7lRNJ",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    }
+]
