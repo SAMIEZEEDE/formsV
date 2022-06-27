@@ -40,11 +40,130 @@
         "inputs": 1,
         "outputs": 1,
         "operation": "set",
-        "globalVariables": [],
+        "globalVariables": [
+            {
+                "textIp": "personalDetailsLabel",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "[]"
+                }
+            },
+            {
+                "textIp": "personalDetails",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "{}"
+                }
+            },
+            {
+                "textIp": "form1",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
         "functionName": "sd_qU5xSPz4Ptl7lRNJ",
         "category": "Function",
         "x": 180,
         "y": 30,
+        "wires": [
+            [
+                "sd_ZS1bRlYMRrAw1yJg"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_orCq1umtJZERwtQk",
+        "type": "Script",
+        "z": "sd_9WQaiL2zq1lD1oCT",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "Form builder",
+        "script": "\n    page.personalDetailsLabel=[\n    {\"label\":\"Firstname\",\"value\":\"Firstname\",\"type\":\"text\"},\n    { \"label\" :\"Lastname\",\"value\":\"Lastname\",\"type\":\"text\"}, \n    {\"label\":\"Phone Number\",\"value\":\"Phone Number\",\"type\":\"number\"},\n    {\"label\":\"Email\",\"value\":\"Email\",\"type\":\"email\"},\n    {\"label\":\"Nationality\",\"value\":\"Nationality\",\"type\":\"text\"}\n    ]\n    \n\n\n\n\n\n\n\n// page.personalDetailsLabel=[\n//     {value:\"Firstname\",\n//     ngModel:\"personalDetails.payload.firstname\",\n//     typeOfInput:\"text\",\n//     error:\"\"\n// },\n// {value:\"Lastname\",\n//     ngModel:\"personalDetails.payload.lastname\",\n//     typeOfInput:\"text\",\n//     error:\"\"\n// },\n// {value:\"Email\",\n//     ngModel:\"personalDetails.payload.email\",\n//     typeOfInput:\"text\",\n//     error:\"\"\n// },\n// {value:\"Nationality\",\n//     ngModel:\"personalDetails.payload.nationality\",\n//     typeOfInput:\"text\",\n//     error:\"\"\n// },\n// {value:\"Phone Number\",\n//     ngModel:\"personalDetails.payload.phonenumber\",\n//     typeOfInput:\"text\",\n//     error:\"\"\n// }]\n\npage.personalDetails={\n    formName:'personalDetailsForm',\n    payload:{\n    firstname:\"\",  \n    lastname:\"\",   \n    email:\"\", \n    nationality:\"\",\n    phonenumber:\"\", \n    }\n}\nconsole.log(this.page.personalDetails.payload)",
+        "functionName": "formBuilder",
+        "category": "Function",
+        "x": 425,
+        "y": 40,
+        "wires": [
+            [
+                "sd_AlGuzDwdowH8Oa9j"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_ZS1bRlYMRrAw1yJg",
+        "type": "UseDependency",
+        "z": "sd_9WQaiL2zq1lD1oCT",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "FormBuilder",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "fb"
+                },
+                "injectable": true
+            },
+            {
+                "textIp": "Validators",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "validators "
+                },
+                "injectable": false
+            },
+            {
+                "textIp": "FormGroup",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "formGroup"
+                },
+                "injectable": false
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/forms",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_ZS1bRlYMRrAw1yJg",
+        "category": "Function",
+        "x": 285,
+        "y": 40,
+        "wires": [
+            [
+                "sd_orCq1umtJZERwtQk"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_AlGuzDwdowH8Oa9j",
+        "type": "Script",
+        "z": "sd_9WQaiL2zq1lD1oCT",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "main form",
+        "script": "page.form1 = page.fb.group({\n     firstname:['', page.validators.required],  \n    lastname:['', page.validators.required],   \n    email:['', page.validators.required], \n    nationality:['', page.validators.required],\n    phonenumber:['', page.validators.required], \n});\n",
+        "functionName": "mainForm",
+        "category": "Function",
+        "x": 560,
+        "y": 40,
         "wires": [
             []
         ],

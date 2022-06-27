@@ -5,7 +5,12 @@
 $grey: #d6d6d6;
 $purple:#e62fe6;
 $white:white;
-
+$lightGray:#ebebff;
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 .bgGrey{
     background-color: $grey;
 }
@@ -15,8 +20,14 @@ $white:white;
 .colorWhite{
     color: $white;
 }
+.border{
+    border: solid 1px;
+}
 .mainContainer{
     height: calc(100vh - (60px + 5em));
+}
+.lightgrayBg{
+     background-color: #ebebff;
 }
 .contentContainer{
     height: calc(100vh - (60px + 5em + 120px));
@@ -25,9 +36,23 @@ $white:white;
 .paddingB1em{
  padding-bottom: 1em;
 }
+.paddingTop2em{
+ padding-top: 2em;
+}
 .width95{
     width: 98%;
 }
 .width100{
     width: 100%;
+}
+.mat-form-field-appearance-outline .mat-form-field-wrapper {
+     padding: 0 !important;
+    margin: 0 !important;
+}
+.mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 0.2em 0 0.2em 0 !important;
+    margin: 0 !important;
+}
+.inputbgWhite{
+    background-color:  #ffffff;
 }

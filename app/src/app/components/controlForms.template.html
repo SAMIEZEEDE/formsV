@@ -1,4 +1,16 @@
-<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-  <h1>
-    prince</h1>
+<div fxLayout="column wrap" class="paddingTop2em" fxLayoutAlign="center center" [fxShow]="true">
+  <div fxLayout="row wrap" class="width95" fxLayoutAlign="center center" [fxShow]="true">
+    <div fxLayout="column wrap" fxFlex="50" fxLayoutGap="1em" fxLayoutAlign="center center" [fxShow]="true">
+      <div fxLayout="row wrap" class="width100" fxLayoutAlign="center center" [fxShow]="true" *ngFor="let label of page.personalDetailsLabel">
+        <div fxLayout="column wrap" fxFlex="30" fxLayoutAlign="center center" [fxShow]="true"><label>
+            {{label.label}}</label></div>
+        <div fxLayout="column wrap" fxFlex="70" fxLayoutAlign="start stretch" [fxShow]="true">
+          <mat-form-field class="inputbgWhite" [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput name="{{label.value}}" type="{{label.type}}" [required]="true">
+
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

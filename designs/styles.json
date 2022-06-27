@@ -3,10 +3,17 @@
         "bgGrey",
         "bgPurple",
         "colorWhite",
+        "border",
         "mainContainer",
+        "lightgrayBg",
         "contentContainer",
         "paddingB1em",
+        "paddingTop2em",
         "width95",
-        "width100"
+        "width100",
+        "mat-form-field-appearance-outline",
+        "mat-form-field-wrapper",
+        "mat-form-field-infix",
+        "inputbgWhite"
     ]
 }
