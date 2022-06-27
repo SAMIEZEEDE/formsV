@@ -13,10 +13,11 @@ import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
 import {
-  FormBuilder,
   Validators,
   FormGroup,
+  ReactiveFormsModule,
   FormControl,
+  FormBuilder,
 } from '@angular/forms'; //_splitter_
 //append_imports_end
 
@@ -67,13 +68,27 @@ export class controlFormsComponent {
     }
   }
 
+  submit(...others) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      this.sd_DOjGzTqYj5jIUf2B(bh);
+      //appendnew_next_submit
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_9U0NPSnyvSXR4o43');
+    }
+  }
+
   //appendnew_flow_controlFormsComponent_start
 
   sd_qU5xSPz4Ptl7lRNJ(bh) {
     try {
       this.page.personalDetailsLabel = [];
       this.page.personalDetails = {};
-      this.page.form1 = undefined;
+      this.page.myForms = undefined;
       bh = this.sd_ZS1bRlYMRrAw1yJg(bh);
       //appendnew_next_sd_qU5xSPz4Ptl7lRNJ
       return bh;
@@ -84,9 +99,8 @@ export class controlFormsComponent {
 
   sd_ZS1bRlYMRrAw1yJg(bh) {
     try {
-      this.page.fb = this.__page_injector__.get(FormBuilder);
       this.page.validators = Validators;
-      this.page.formGroup = FormGroup;
+      this.page.fb = FormGroup;
       bh = this.formBuilder(bh);
       //appendnew_next_sd_ZS1bRlYMRrAw1yJg
       return bh;
@@ -99,11 +113,11 @@ export class controlFormsComponent {
     try {
       const page = this.page;
       page.personalDetailsLabel = [
-        { label: 'Firstname', value: 'Firstname', type: 'text' },
-        { label: 'Lastname', value: 'Lastname', type: 'text' },
-        { label: 'Phone Number', value: 'Phone Number', type: 'number' },
-        { label: 'Email', value: 'Email', type: 'email' },
-        { label: 'Nationality', value: 'Nationality', type: 'text' },
+        { label: 'Firstname', value: 'firstname', type: 'text' },
+        { label: 'Lastname', value: 'lastname', type: 'text' },
+        { label: 'Phone Number', value: 'Phonenumber', type: 'number' },
+        { label: 'Email', value: 'email', type: 'email' },
+        { label: 'Nationality', value: 'nationality', type: 'text' },
       ];
 
       // page.personalDetailsLabel=[
@@ -133,17 +147,17 @@ export class controlFormsComponent {
       //     error:""
       // }]
 
-      page.personalDetails = {
-        formName: 'personalDetailsForm',
-        payload: {
-          firstname: '',
-          lastname: '',
-          email: '',
-          nationality: '',
-          phonenumber: '',
-        },
-      };
-      console.log(this.page.personalDetails.payload);
+      // page.personalDetails={
+      //     formName:'personalDetailsForm',
+      //     payload:{
+      //     firstname:"",
+      //     lastname:"",
+      //     email:"",
+      //     nationality:"",
+      //     phonenumber:"",
+      //     }
+      // }
+      // console.log(this.page.personalDetails.payload)
       bh = this.mainForm(bh);
       //appendnew_next_formBuilder
       return bh;
@@ -155,18 +169,28 @@ export class controlFormsComponent {
   mainForm(bh) {
     try {
       const page = this.page;
-      page.form1 = page.fb.group({
-        firstname: ['', page.validators.required],
-        lastname: ['', page.validators.required],
-        email: ['', page.validators.required],
-        nationality: ['', page.validators.required],
-        phonenumber: ['', page.validators.required],
+      page.myForms = new page.fb({
+        firstname: new FormControl('', page.validators.required),
+        lastname: new FormControl('', page.validators.required),
+        email: new FormControl('', page.validators.required),
+        nationality: new FormControl('', page.validators.required),
+        Phonenumber: new FormControl('', page.validators.required),
       });
 
       //appendnew_next_mainForm
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_AlGuzDwdowH8Oa9j');
+    }
+  }
+
+  sd_DOjGzTqYj5jIUf2B(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), this.page.myForms);
+      //appendnew_next_sd_DOjGzTqYj5jIUf2B
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_DOjGzTqYj5jIUf2B');
     }
   }
 
